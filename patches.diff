@@ -1,0 +1,1742 @@
+From 33fc0283571d0093227b14d9968197e37620d6fb Mon Sep 17 00:00:00 2001
+From: Geoffrey Xu <geoffreyxu@gmail.com>
+Date: Sun, 20 Jul 2025 11:51:50 -0700
+Subject: [PATCH 1/4] Remove logs folder from remote
+
+---
+ logs/all-services-20250309-1330.log | 501 ----------------------------
+ logs/all-services-20250309-1338.log | 501 ----------------------------
+ 2 files changed, 1002 deletions(-)
+ delete mode 100644 logs/all-services-20250309-1330.log
+ delete mode 100644 logs/all-services-20250309-1338.log
+
+diff --git a/logs/all-services-20250309-1330.log b/logs/all-services-20250309-1330.log
+deleted file mode 100644
+index 5aae67e..0000000
+--- a/logs/all-services-20250309-1330.log
++++ /dev/null
+@@ -1,501 +0,0 @@
+-[2025-03-09 20:29:32]game-factory |  INFO: Started server process [1]
+-[2025-03-09 20:29:32]game-factory |  INFO: Waiting for application startup.
+-[2025-03-09 20:29:32]game-factory |  INFO: Application startup complete.
+-[2025-03-09 20:29:32]game-factory |  INFO: Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+-[2025-03-09 20:29:54]game-factory |  INFO: Shutting down
+-[2025-03-09 20:29:54]game-factory |  INFO: Waiting for application shutdown.
+-[2025-03-09 20:29:54]game-factory |  INFO: Application shutdown complete.
+-[2025-03-09 20:29:54]game-factory |  INFO: Finished server process [1]
+-[2025-03-09 20:29:43]cache |  INFO: Started server process [1]
+-[2025-03-09 20:29:43]cache |  INFO: Waiting for application startup.
+-[2025-03-09 20:29:43]cache |  INFO: Starting up
+-[2025-03-09 20:29:43]cache |  INFO: Notifying QGen 2025-03-09 20:29:43.309352
+-[2025-03-09 20:29:43]cache |  INFO: Sending request to QGen for 8 articles
+-[2025-03-09 20:29:45]cache |  ERROR: Error notifying QGen: Server error '500 Internal Server Error' for url 'http://question-gen:8000/questions'
+-[2025-03-09 20:29:45]cache |  For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+-[2025-03-09 20:29:45]cache |  Traceback (most recent call last):
+-[2025-03-09 20:29:45]cache |  File "/app/main.py", line 74, in generate_questions
+-[2025-03-09 20:29:45]cache |  response.raise_for_status()
+-[2025-03-09 20:29:32]question-gen |  INFO: Started server process [1]
+-[2025-03-09 20:29:32]question-gen |  INFO: Waiting for application startup.
+-[2025-03-09 20:29:32]question-gen |  INFO: Application startup complete.
+-[2025-03-09 20:29:32]question-gen |  INFO: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+-[2025-03-09 20:29:41]question-gen |  INFO: 127.0.0.1:60550 - "GET /health HTTP/1.1" 200 OK
+-[2025-03-09 20:29:45]question-gen |  INFO: 172.28.0.7:54110 - "POST /questions HTTP/1.1" 500 Internal Server Error
+-[2025-03-09 20:29:45]question-gen |  ERROR: Exception in ASGI application
+-[2025-03-09 20:29:45]question-gen |  Traceback (most recent call last):
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+-[2025-03-09 20:29:45]question-gen |  yield
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_transports/default.py", line 250, in handle_request
+-[2025-03-09 20:29:45]question-gen |  resp = self._pool.handle_request(req)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+-[2025-03-09 20:29:45]question-gen |  raise exc from None
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+-[2025-03-09 20:29:45]question-gen |  response = connection.handle_request(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+-[2025-03-09 20:29:45]question-gen |  return self._connection.handle_request(request)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+-[2025-03-09 20:29:45]question-gen |  raise exc
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 86, in handle_request
+-[2025-03-09 20:29:45]question-gen |  self._send_request_headers(**kwargs)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 144, in _send_request_headers
+-[2025-03-09 20:29:45]question-gen |  with map_exceptions({h11.LocalProtocolError: LocalProtocolError}):
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/contextlib.py", line 153, in __exit__
+-[2025-03-09 20:29:45]question-gen |  self.gen.throw(typ, value, traceback)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+-[2025-03-09 20:29:45]question-gen |  raise to_exc(exc) from exc
+-[2025-03-09 20:29:45]question-gen |  httpcore.LocalProtocolError: Illegal header value b'Bearer '
+-[2025-03-09 20:29:45]question-gen | 
+-[2025-03-09 20:29:45]question-gen |  The above exception was the direct cause of the following exception:
+-[2025-03-09 20:29:45]question-gen | 
+-[2025-03-09 20:29:45]question-gen |  Traceback (most recent call last):
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1003, in _request
+-[2025-03-09 20:29:45]question-gen |  response = self._client.send(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 914, in send
+-[2025-03-09 20:29:45]question-gen |  response = self._send_handling_auth(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+-[2025-03-09 20:29:45]question-gen |  response = self._send_handling_redirects(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+-[2025-03-09 20:29:45]question-gen |  response = self._send_single_request(request)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1014, in _send_single_request
+-[2025-03-09 20:29:45]question-gen |  response = transport.handle_request(request)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_transports/default.py", line 249, in handle_request
+-[2025-03-09 20:29:45]question-gen |  with map_httpcore_exceptions():
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/contextlib.py", line 153, in __exit__
+-[2025-03-09 20:29:45]question-gen |  self.gen.throw(typ, value, traceback)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+-[2025-03-09 20:29:45]question-gen |  raise mapped_exc(message) from exc
+-[2025-03-09 20:29:45]question-gen |  httpx.LocalProtocolError: Illegal header value b'Bearer '
+-[2025-03-09 20:29:45]question-gen | 
+-[2025-03-09 20:29:45]question-gen |  The above exception was the direct cause of the following exception:
+-[2025-03-09 20:29:45]question-gen | 
+-[2025-03-09 20:29:45]question-gen |  Traceback (most recent call last):
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+-[2025-03-09 20:29:45]question-gen |  result = await app( # type: ignore[func-returns-value]
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+-[2025-03-09 20:29:45]question-gen |  return await self.app(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+-[2025-03-09 20:29:45]question-gen |  await super().__call__(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+-[2025-03-09 20:29:45]question-gen |  await self.middleware_stack(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+-[2025-03-09 20:29:45]question-gen |  raise exc
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+-[2025-03-09 20:29:45]question-gen |  await self.app(scope, receive, _send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/cors.py", line 85, in __call__
+-[2025-03-09 20:29:45]question-gen |  await self.app(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+-[2025-03-09 20:29:45]question-gen |  await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+-[2025-03-09 20:29:45]question-gen |  raise exc
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+-[2025-03-09 20:29:45]question-gen |  await app(scope, receive, sender)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+-[2025-03-09 20:29:45]question-gen |  await self.middleware_stack(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+-[2025-03-09 20:29:45]question-gen |  await route.handle(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+-[2025-03-09 20:29:45]question-gen |  await self.app(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+-[2025-03-09 20:29:45]question-gen |  await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+-[2025-03-09 20:29:45]question-gen |  raise exc
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+-[2025-03-09 20:29:45]question-gen |  await app(scope, receive, sender)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+-[2025-03-09 20:29:45]question-gen |  response = await f(request)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+-[2025-03-09 20:29:45]question-gen |  raw_response = await run_endpoint_function(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+-[2025-03-09 20:29:45]question-gen |  return await run_in_threadpool(dependant.call, **values)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+-[2025-03-09 20:29:45]question-gen |  return await anyio.to_thread.run_sync(func)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+-[2025-03-09 20:29:45]question-gen |  return await get_async_backend().run_sync_in_worker_thread(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2461, in run_sync_in_worker_thread
+-[2025-03-09 20:29:45]question-gen |  return await future
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 962, in run
+-[2025-03-09 20:29:45]question-gen |  result = context.run(func, *args)
+-[2025-03-09 20:29:45]question-gen |  File "/app/main.py", line 68, in read_questions
+-[2025-03-09 20:29:45]question-gen |  completion = llm.chat.completions.create(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+-[2025-03-09 20:29:45]question-gen |  return func(*args, **kwargs)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 879, in create
+-[2025-03-09 20:29:45]question-gen |  return self._post(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1290, in post
+-[2025-03-09 20:29:45]question-gen |  return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 967, in request
+-[2025-03-09 20:29:45]question-gen |  return self._request(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1027, in _request
+-[2025-03-09 20:29:45]question-gen |  return self._retry_request(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1105, in _retry_request
+-[2025-03-09 20:29:45]question-gen |  return self._request(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1027, in _request
+-[2025-03-09 20:29:45]question-gen |  return self._retry_request(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1105, in _retry_request
+-[2025-03-09 20:29:45]question-gen |  return self._request(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1037, in _request
+-[2025-03-09 20:29:45]question-gen |  raise APIConnectionError(request=request) from err
+-[2025-03-09 20:29:45]question-gen |  openai.APIConnectionError: Connection error.
+-[2025-03-09 20:29:51]question-gen |  INFO: 127.0.0.1:45784 - "GET /health HTTP/1.1" 200 OK
+-[2025-03-09 20:29:54]question-gen |  INFO: Shutting down
+-[2025-03-09 20:29:54]question-gen |  INFO: Waiting for application shutdown.
+-[2025-03-09 20:29:54]question-gen |  INFO: Application shutdown complete.
+-[2025-03-09 20:29:54]question-gen |  INFO: Finished server process [1]
+-[2025-03-09 20:29:45]cache |  File "/usr/local/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+-[2025-03-09 20:29:45]cache |  raise HTTPStatusError(message, request=request, response=self)
+-[2025-03-09 20:29:45]cache |  httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://question-gen:8000/questions'
+-[2025-03-09 20:29:45]cache |  For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+-[2025-03-09 20:29:45]cache |  INFO: Initializing Redis connection
+-[2025-03-09 20:29:45]cache |  INFO: Redis connection established
+-[2025-03-09 20:29:45]cache |  INFO: Application startup complete.
+-[2025-03-09 20:29:45]cache |  INFO: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+-[2025-03-09 20:29:52]cache |  INFO: Request started - ID: - Method: GET - Path: /health
+-[2025-03-09 20:29:52]cache |  INFO: Request completed - ID: - Method: GET - Path: /health - Status: 200 - Time: 0.00s
+-[2025-03-09 20:29:52]cache |  INFO: 127.0.0.1:45788 - "GET /health HTTP/1.1" 200 OK
+-[2025-03-09 20:29:54]cache |  INFO: Shutting down
+-[2025-03-09 20:29:54]cache |  INFO: Waiting for application shutdown.
+-[2025-03-09 20:29:54]cache |  INFO: Shutting down
+-[2025-03-09 20:29:54]cache |  INFO: Application shutdown complete.
+-[2025-03-09 20:29:54]cache |  INFO: Finished server process [1]
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf differs from the packaged version
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: Configuration complete; ready for start up
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: using the "epoll" event method
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: nginx/1.26.3
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: built by gcc 13.2.1 20240309 (Alpine 13.2.1_git20240309)
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: OS: Linux 5.15.49-linuxkit-pr
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: start worker processes
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: start worker process 29
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: start worker process 30
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: start worker process 31
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: start worker process 32
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 29#29: gracefully shutting down
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 29#29: exiting
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 29#29: exit
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 30#30: gracefully shutting down
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 32#32: gracefully shutting down
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 30#30: exiting
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 32#32: exiting
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 30#30: exit
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 32#32: exit
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 31#31: gracefully shutting down
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 31#31: exiting
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 31#31: exit
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: worker process 29 exited with code 0
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: worker process 30 exited with code 0
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: signal 29 (SIGIO) received
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: worker process 32 exited with code 0
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: signal 29 (SIGIO) received
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: worker process 31 exited with code 0
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: exit
+-[2025-03-06 04:56:10]redis |  1:C 06 Mar 2025 04:56:10.408 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 04:56:10]redis |  1:C 06 Mar 2025 04:56:10.408 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 04:56:10]redis |  1:C 06 Mar 2025 04:56:10.408 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.408 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.409 * Running mode=standalone, port=6379.
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * Server initialized
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * Loading RDB produced by version 7.4.2
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * RDB age 87593 seconds
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * DB loaded from disk: 0.000 seconds
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * Ready to accept connections tcp
+-[2025-03-06 04:58:54]redis |  1:signal-handler (1741237134) Received SIGTERM scheduling shutdown...
+-[2025-03-06 04:58:54]redis |  1:M 06 Mar 2025 04:58:54.513 * User requested shutdown...
+-[2025-03-06 04:58:54]redis |  1:M 06 Mar 2025 04:58:54.513 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 04:58:54]redis |  1:M 06 Mar 2025 04:58:54.515 * DB saved on disk
+-[2025-03-06 04:58:54]redis |  1:M 06 Mar 2025 04:58:54.515 # Redis is now ready to exit, bye bye...
+-[2025-03-06 05:00:24]redis |  1:C 06 Mar 2025 05:00:24.625 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 05:00:24]redis |  1:C 06 Mar 2025 05:00:24.625 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 05:00:24]redis |  1:C 06 Mar 2025 05:00:24.625 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.626 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.627 * Running mode=standalone, port=6379.
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * Server initialized
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * Loading RDB produced by version 7.4.2
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * RDB age 90 seconds
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * DB loaded from disk: 0.000 seconds
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * Ready to accept connections tcp
+-[2025-03-06 06:06:51]redis |  1:signal-handler (1741241211) Received SIGTERM scheduling shutdown...
+-[2025-03-06 06:06:51]redis |  1:M 06 Mar 2025 06:06:51.132 * User requested shutdown...
+-[2025-03-06 06:06:51]redis |  1:M 06 Mar 2025 06:06:51.132 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 06:06:51]redis |  1:M 06 Mar 2025 06:06:51.139 * DB saved on disk
+-[2025-03-06 06:06:51]redis |  1:M 06 Mar 2025 06:06:51.139 # Redis is now ready to exit, bye bye...
+-[2025-03-06 06:11:52]redis |  1:C 06 Mar 2025 06:11:52.475 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 06:11:52]redis |  1:C 06 Mar 2025 06:11:52.475 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 06:11:52]redis |  1:C 06 Mar 2025 06:11:52.475 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.476 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.477 * Running mode=standalone, port=6379.
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.477 * Server initialized
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.478 * Loading RDB produced by version 7.4.2
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.478 * RDB age 301 seconds
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.478 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.478 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.478 * DB loaded from disk: 0.001 seconds
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.478 * Ready to accept connections tcp
+-[2025-03-06 06:11:58]redis |  1:signal-handler (1741241518) Received SIGTERM scheduling shutdown...
+-[2025-03-06 06:11:58]redis |  1:M 06 Mar 2025 06:11:58.493 * User requested shutdown...
+-[2025-03-06 06:11:58]redis |  1:M 06 Mar 2025 06:11:58.493 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 06:11:58]redis |  1:M 06 Mar 2025 06:11:58.495 * DB saved on disk
+-[2025-03-06 06:11:58]redis |  1:M 06 Mar 2025 06:11:58.495 # Redis is now ready to exit, bye bye...
+-[2025-03-06 06:12:08]redis |  1:C 06 Mar 2025 06:12:08.376 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 06:12:08]redis |  1:C 06 Mar 2025 06:12:08.376 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 06:12:08]redis |  1:C 06 Mar 2025 06:12:08.376 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.376 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * Running mode=standalone, port=6379.
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * Server initialized
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * Loading RDB produced by version 7.4.2
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * RDB age 10 seconds
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * RDB memory usage when created 0.93 Mb
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * DB loaded from disk: 0.000 seconds
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * Ready to accept connections tcp
+-[2025-03-06 06:12:43]redis |  1:signal-handler (1741241563) Received SIGTERM scheduling shutdown...
+-[2025-03-06 06:12:43]redis |  1:M 06 Mar 2025 06:12:43.368 * User requested shutdown...
+-[2025-03-06 06:12:43]redis |  1:M 06 Mar 2025 06:12:43.368 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 06:12:43]redis |  1:M 06 Mar 2025 06:12:43.370 * DB saved on disk
+-[2025-03-06 06:12:43]redis |  1:M 06 Mar 2025 06:12:43.370 # Redis is now ready to exit, bye bye...
+-[2025-03-06 06:14:21]redis |  1:C 06 Mar 2025 06:14:21.772 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 06:14:21]redis |  1:C 06 Mar 2025 06:14:21.772 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 06:14:21]redis |  1:C 06 Mar 2025 06:14:21.772 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.772 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.773 * Running mode=standalone, port=6379.
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * Server initialized
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * Loading RDB produced by version 7.4.2
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * RDB age 98 seconds
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * DB loaded from disk: 0.000 seconds
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * Ready to accept connections tcp
+-[2025-03-06 06:14:46]redis |  1:signal-handler (1741241686) Received SIGTERM scheduling shutdown...
+-[2025-03-06 06:14:46]redis |  1:M 06 Mar 2025 06:14:46.704 * User requested shutdown...
+-[2025-03-06 06:14:46]redis |  1:M 06 Mar 2025 06:14:46.704 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 06:14:46]redis |  1:M 06 Mar 2025 06:14:46.706 * DB saved on disk
+-[2025-03-06 06:14:46]redis |  1:M 06 Mar 2025 06:14:46.706 # Redis is now ready to exit, bye bye...
+-[2025-03-06 06:16:58]redis |  1:C 06 Mar 2025 06:16:58.567 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 06:16:58]redis |  1:C 06 Mar 2025 06:16:58.567 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 06:16:58]redis |  1:C 06 Mar 2025 06:16:58.567 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.567 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * Running mode=standalone, port=6379.
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * Server initialized
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * Loading RDB produced by version 7.4.2
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * RDB age 132 seconds
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * DB loaded from disk: 0.000 seconds
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * Ready to accept connections tcp
+-[2025-03-06 06:17:50]redis |  1:signal-handler (1741241870) Received SIGTERM scheduling shutdown...
+-[2025-03-06 06:17:50]redis |  1:M 06 Mar 2025 06:17:50.782 * User requested shutdown...
+-[2025-03-06 06:17:50]redis |  1:M 06 Mar 2025 06:17:50.782 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 06:17:50]redis |  1:M 06 Mar 2025 06:17:50.784 * DB saved on disk
+-[2025-03-06 06:17:50]redis |  1:M 06 Mar 2025 06:17:50.784 # Redis is now ready to exit, bye bye...
+-[2025-03-06 06:17:59]redis |  1:C 06 Mar 2025 06:17:59.075 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 06:17:59]redis |  1:C 06 Mar 2025 06:17:59.075 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 06:17:59]redis |  1:C 06 Mar 2025 06:17:59.075 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.076 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.076 * Running mode=standalone, port=6379.
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.076 * Server initialized
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.077 * Loading RDB produced by version 7.4.2
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.077 * RDB age 9 seconds
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.077 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.077 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.077 * DB loaded from disk: 0.000 seconds
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.077 * Ready to accept connections tcp
+-[2025-03-06 06:20:06]redis |  1:signal-handler (1741242006) Received SIGTERM scheduling shutdown...
+-[2025-03-06 06:20:06]redis |  1:M 06 Mar 2025 06:20:06.773 * User requested shutdown...
+-[2025-03-06 06:20:06]redis |  1:M 06 Mar 2025 06:20:06.773 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 06:20:06]redis |  1:M 06 Mar 2025 06:20:06.777 * DB saved on disk
+-[2025-03-06 06:20:06]redis |  1:M 06 Mar 2025 06:20:06.777 # Redis is now ready to exit, bye bye...
+-[2025-03-06 08:52:35]redis |  1:C 06 Mar 2025 08:52:35.598 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 08:52:35]redis |  1:C 06 Mar 2025 08:52:35.598 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 08:52:35]redis |  1:C 06 Mar 2025 08:52:35.598 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.598 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.599 * Running mode=standalone, port=6379.
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.599 * Server initialized
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.601 * Loading RDB produced by version 7.4.2
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.601 * RDB age 9149 seconds
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.601 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.601 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.601 * DB loaded from disk: 0.002 seconds
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.601 * Ready to accept connections tcp
+-[2025-03-06 08:52:52]redis |  1:signal-handler (1741251172) Received SIGTERM scheduling shutdown...
+-[2025-03-06 08:52:52]redis |  1:M 06 Mar 2025 08:52:52.092 * User requested shutdown...
+-[2025-03-06 08:52:52]redis |  1:M 06 Mar 2025 08:52:52.092 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 08:52:52]redis |  1:M 06 Mar 2025 08:52:52.094 * DB saved on disk
+-[2025-03-06 08:52:52]redis |  1:M 06 Mar 2025 08:52:52.094 # Redis is now ready to exit, bye bye...
+-[2025-03-09 20:29:31]redis |  1:C 09 Mar 2025 20:29:31.895 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-09 20:29:31]redis |  1:C 09 Mar 2025 20:29:31.895 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-09 20:29:31]redis |  1:C 09 Mar 2025 20:29:31.895 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.895 * monotonic clock: POSIX clock_gettime
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.896 * Running mode=standalone, port=6379.
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.896 * Server initialized
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.897 * Loading RDB produced by version 7.4.2
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.897 * RDB age 300999 seconds
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.897 * RDB memory usage when created 0.96 Mb
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.897 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.897 * DB loaded from disk: 0.001 seconds
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.897 * Ready to accept connections tcp
+-[2025-03-09 20:29:54]redis |  1:signal-handler (1741552194) Received SIGTERM scheduling shutdown...
+-[2025-03-09 20:29:54]redis |  1:M 09 Mar 2025 20:29:54.425 * User requested shutdown...
+-[2025-03-09 20:29:54]redis |  1:M 09 Mar 2025 20:29:54.425 * Saving the final RDB snapshot before exiting.
+-[2025-03-09 20:29:54]redis |  1:M 09 Mar 2025 20:29:54.428 * DB saved on disk
+-[2025-03-09 20:29:54]redis |  1:M 09 Mar 2025 20:29:54.428 # Redis is now ready to exit, bye bye...
+-[2025-03-06 04:56:10]postgres-db | 
+-[2025-03-06 04:56:10]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 04:56:10]postgres-db | 
+-[2025-03-06 04:56:10]postgres-db |  2025-03-06 04:56:10.511 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 04:56:10]postgres-db |  2025-03-06 04:56:10.511 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 04:56:10]postgres-db |  2025-03-06 04:56:10.511 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 04:56:10]postgres-db |  2025-03-06 04:56:10.513 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 04:56:10]postgres-db |  2025-03-06 04:56:10.521 UTC [30] LOG: database system was shut down at 2025-03-05 04:36:17 UTC
+-[2025-03-06 04:56:10]postgres-db |  2025-03-06 04:56:10.531 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.439 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.441 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.446 UTC [1] LOG: background worker "logical replication launcher" (PID 33) exited with exit code 1
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.447 UTC [28] LOG: shutting down
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.448 UTC [28] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.456 UTC [28] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.010 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA62F0, redo lsn=0/1CA62F0
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.462 UTC [1] LOG: database system is shut down
+-[2025-03-06 05:00:24]postgres-db | 
+-[2025-03-06 05:00:24]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 05:00:24]postgres-db | 
+-[2025-03-06 05:00:24]postgres-db |  2025-03-06 05:00:24.856 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 05:00:24]postgres-db |  2025-03-06 05:00:24.856 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 05:00:24]postgres-db |  2025-03-06 05:00:24.856 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 05:00:24]postgres-db |  2025-03-06 05:00:24.858 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 05:00:24]postgres-db |  2025-03-06 05:00:24.871 UTC [28] LOG: database system was shut down at 2025-03-06 04:58:54 UTC
+-[2025-03-06 05:00:24]postgres-db |  2025-03-06 05:00:24.879 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 05:06:24]postgres-db |  2025-03-06 05:06:24.697 UTC [26] LOG: checkpoint starting: time
+-[2025-03-06 05:06:24]postgres-db |  2025-03-06 05:06:24.722 UTC [26] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.002 s, total=0.026 s; sync files=2, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA63F8, redo lsn=0/1CA63A0
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.103 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.105 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.113 UTC [1] LOG: background worker "logical replication launcher" (PID 31) exited with exit code 1
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.117 UTC [26] LOG: shutting down
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.118 UTC [26] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.123 UTC [26] LOG: checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.007 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1CA64A8, redo lsn=0/1CA64A8
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.129 UTC [1] LOG: database system is shut down
+-[2025-03-06 06:11:52]postgres-db | 
+-[2025-03-06 06:11:52]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 06:11:52]postgres-db | 
+-[2025-03-06 06:11:52]postgres-db |  2025-03-06 06:11:52.766 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 06:11:52]postgres-db |  2025-03-06 06:11:52.766 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 06:11:52]postgres-db |  2025-03-06 06:11:52.766 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 06:11:52]postgres-db |  2025-03-06 06:11:52.768 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 06:11:52]postgres-db |  2025-03-06 06:11:52.774 UTC [29] LOG: database system was shut down at 2025-03-06 06:06:51 UTC
+-[2025-03-06 06:11:52]postgres-db |  2025-03-06 06:11:52.779 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.401 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.405 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.416 UTC [1] LOG: background worker "logical replication launcher" (PID 32) exited with exit code 1
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.416 UTC [27] LOG: shutting down
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.418 UTC [27] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.426 UTC [27] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.002 s, total=0.010 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA6520, redo lsn=0/1CA6520
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.433 UTC [1] LOG: database system is shut down
+-[2025-03-06 06:12:08]postgres-db | 
+-[2025-03-06 06:12:08]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 06:12:08]postgres-db | 
+-[2025-03-06 06:12:08]postgres-db |  2025-03-06 06:12:08.598 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 06:12:08]postgres-db |  2025-03-06 06:12:08.598 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 06:12:08]postgres-db |  2025-03-06 06:12:08.598 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 06:12:08]postgres-db |  2025-03-06 06:12:08.601 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 06:12:08]postgres-db |  2025-03-06 06:12:08.607 UTC [29] LOG: database system was shut down at 2025-03-06 06:11:58 UTC
+-[2025-03-06 06:12:08]postgres-db |  2025-03-06 06:12:08.612 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.299 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.300 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.309 UTC [1] LOG: background worker "logical replication launcher" (PID 32) exited with exit code 1
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.311 UTC [27] LOG: shutting down
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.312 UTC [27] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.319 UTC [27] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.009 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA65D0, redo lsn=0/1CA65D0
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.326 UTC [1] LOG: database system is shut down
+-[2025-03-06 06:14:21]postgres-db | 
+-[2025-03-06 06:14:21]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 06:14:21]postgres-db | 
+-[2025-03-06 06:14:21]postgres-db |  2025-03-06 06:14:21.873 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 06:14:21]postgres-db |  2025-03-06 06:14:21.873 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 06:14:21]postgres-db |  2025-03-06 06:14:21.873 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 06:14:21]postgres-db |  2025-03-06 06:14:21.878 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 06:14:21]postgres-db |  2025-03-06 06:14:21.882 UTC [29] LOG: database system was shut down at 2025-03-06 06:12:43 UTC
+-[2025-03-06 06:14:21]postgres-db |  2025-03-06 06:14:21.904 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.666 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.668 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.675 UTC [1] LOG: background worker "logical replication launcher" (PID 32) exited with exit code 1
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.679 UTC [27] LOG: shutting down
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.680 UTC [27] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.687 UTC [27] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.009 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA6680, redo lsn=0/1CA6680
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.693 UTC [1] LOG: database system is shut down
+-[2025-03-06 06:16:58]postgres-db | 
+-[2025-03-06 06:16:58]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 06:16:58]postgres-db | 
+-[2025-03-06 06:16:58]postgres-db |  2025-03-06 06:16:58.699 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 06:16:58]postgres-db |  2025-03-06 06:16:58.699 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 06:16:58]postgres-db |  2025-03-06 06:16:58.700 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 06:16:58]postgres-db |  2025-03-06 06:16:58.717 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 06:16:58]postgres-db |  2025-03-06 06:16:58.730 UTC [29] LOG: database system was shut down at 2025-03-06 06:14:46 UTC
+-[2025-03-06 06:16:58]postgres-db |  2025-03-06 06:16:58.737 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.738 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.741 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.752 UTC [1] LOG: background worker "logical replication launcher" (PID 32) exited with exit code 1
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.755 UTC [27] LOG: shutting down
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.757 UTC [27] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.769 UTC [27] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.002 s, total=0.015 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA6730, redo lsn=0/1CA6730
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.777 UTC [1] LOG: database system is shut down
+-[2025-03-06 06:17:59]postgres-db | 
+-[2025-03-06 06:17:59]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 06:17:59]postgres-db | 
+-[2025-03-06 06:17:59]postgres-db |  2025-03-06 06:17:59.309 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 06:17:59]postgres-db |  2025-03-06 06:17:59.310 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 06:17:59]postgres-db |  2025-03-06 06:17:59.310 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 06:17:59]postgres-db |  2025-03-06 06:17:59.312 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 06:17:59]postgres-db |  2025-03-06 06:17:59.319 UTC [29] LOG: database system was shut down at 2025-03-06 06:17:50 UTC
+-[2025-03-06 06:17:59]postgres-db |  2025-03-06 06:17:59.330 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.768 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.770 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.773 UTC [1] LOG: background worker "logical replication launcher" (PID 32) exited with exit code 1
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.776 UTC [27] LOG: shutting down
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.778 UTC [27] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.787 UTC [27] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.002 s, total=0.011 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA67E0, redo lsn=0/1CA67E0
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.794 UTC [1] LOG: database system is shut down
+-[2025-03-06 08:52:35]postgres-db | 
+-[2025-03-06 08:52:35]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 08:52:35]postgres-db | 
+-[2025-03-06 08:52:35]postgres-db |  2025-03-06 08:52:35.720 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 08:52:35]postgres-db |  2025-03-06 08:52:35.720 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 08:52:35]postgres-db |  2025-03-06 08:52:35.720 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 08:52:35]postgres-db |  2025-03-06 08:52:35.721 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 08:52:35]postgres-db |  2025-03-06 08:52:35.727 UTC [28] LOG: database system was shut down at 2025-03-06 06:20:06 UTC
+-[2025-03-06 08:52:35]postgres-db |  2025-03-06 08:52:35.737 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.067 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.070 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.073 UTC [1] LOG: background worker "logical replication launcher" (PID 31) exited with exit code 1
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.076 UTC [26] LOG: shutting down
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.079 UTC [26] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.089 UTC [26] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.013 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA6890, redo lsn=0/1CA6890
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.095 UTC [1] LOG: database system is shut down
+-[2025-03-09 20:29:31]postgres-db | 
+-[2025-03-09 20:29:31]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-09 20:29:31]postgres-db | 
+-[2025-03-09 20:29:32]postgres-db |  2025-03-09 20:29:32.046 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-09 20:29:32]postgres-db |  2025-03-09 20:29:32.047 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-09 20:29:32]postgres-db |  2025-03-09 20:29:32.047 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-09 20:29:32]postgres-db |  2025-03-09 20:29:32.051 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-09 20:29:32]postgres-db |  2025-03-09 20:29:32.056 UTC [28] LOG: database system was shut down at 2025-03-06 08:52:52 UTC
+-[2025-03-09 20:29:32]postgres-db |  2025-03-09 20:29:32.070 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.388 UTC [1] LOG: received fast shutdown request
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.390 UTC [1] LOG: aborting any active transactions
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.395 UTC [1] LOG: background worker "logical replication launcher" (PID 31) exited with exit code 1
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.395 UTC [26] LOG: shutting down
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.396 UTC [26] LOG: checkpoint starting: shutdown immediate
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.405 UTC [26] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.002 s, total=0.010 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA6940, redo lsn=0/1CA6940
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.410 UTC [1] LOG: database system is shut down
+diff --git a/logs/all-services-20250309-1338.log b/logs/all-services-20250309-1338.log
+deleted file mode 100644
+index 499ce43..0000000
+--- a/logs/all-services-20250309-1338.log
++++ /dev/null
+@@ -1,501 +0,0 @@
+-[2025-03-09 20:29:32]game-factory |  INFO: Started server process [1]
+-[2025-03-09 20:29:32]game-factory |  INFO: Waiting for application startup.
+-[2025-03-09 20:29:32]game-factory |  INFO: Application startup complete.
+-[2025-03-09 20:29:32]game-factory |  INFO: Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+-[2025-03-09 20:29:54]game-factory |  INFO: Shutting down
+-[2025-03-09 20:29:54]game-factory |  INFO: Waiting for application shutdown.
+-[2025-03-09 20:29:54]game-factory |  INFO: Application shutdown complete.
+-[2025-03-09 20:29:54]game-factory |  INFO: Finished server process [1]
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf differs from the packaged version
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  /docker-entrypoint.sh: Configuration complete; ready for start up
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: using the "epoll" event method
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: nginx/1.26.3
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: built by gcc 13.2.1 20240309 (Alpine 13.2.1_git20240309)
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: OS: Linux 5.15.49-linuxkit-pr
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: start worker processes
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: start worker process 29
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: start worker process 30
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: start worker process 31
+-[2025-03-09 20:29:31]cs130-sweats-frontend-1 |  2025/03/09 20:29:31 [notice] 1#1: start worker process 32
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 29#29: gracefully shutting down
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 29#29: exiting
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 29#29: exit
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 30#30: gracefully shutting down
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 32#32: gracefully shutting down
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 30#30: exiting
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 32#32: exiting
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 30#30: exit
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 32#32: exit
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 31#31: gracefully shutting down
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 31#31: exiting
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 31#31: exit
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: worker process 29 exited with code 0
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: worker process 30 exited with code 0
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: signal 29 (SIGIO) received
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: worker process 32 exited with code 0
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: signal 29 (SIGIO) received
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: worker process 31 exited with code 0
+-[2025-03-09 20:29:54]cs130-sweats-frontend-1 |  2025/03/09 20:29:54 [notice] 1#1: exit
+-[2025-03-09 20:29:32]question-gen |  INFO: Started server process [1]
+-[2025-03-09 20:29:32]question-gen |  INFO: Waiting for application startup.
+-[2025-03-09 20:29:32]question-gen |  INFO: Application startup complete.
+-[2025-03-09 20:29:32]question-gen |  INFO: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+-[2025-03-09 20:29:41]question-gen |  INFO: 127.0.0.1:60550 - "GET /health HTTP/1.1" 200 OK
+-[2025-03-09 20:29:45]question-gen |  INFO: 172.28.0.7:54110 - "POST /questions HTTP/1.1" 500 Internal Server Error
+-[2025-03-09 20:29:45]question-gen |  ERROR: Exception in ASGI application
+-[2025-03-09 20:29:45]question-gen |  Traceback (most recent call last):
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+-[2025-03-09 20:29:45]question-gen |  yield
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_transports/default.py", line 250, in handle_request
+-[2025-03-09 20:29:45]question-gen |  resp = self._pool.handle_request(req)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+-[2025-03-09 20:29:45]question-gen |  raise exc from None
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+-[2025-03-09 20:29:45]question-gen |  response = connection.handle_request(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+-[2025-03-09 20:29:45]question-gen |  return self._connection.handle_request(request)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+-[2025-03-09 20:29:45]question-gen |  raise exc
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 86, in handle_request
+-[2025-03-09 20:29:45]question-gen |  self._send_request_headers(**kwargs)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 144, in _send_request_headers
+-[2025-03-09 20:29:45]question-gen |  with map_exceptions({h11.LocalProtocolError: LocalProtocolError}):
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/contextlib.py", line 153, in __exit__
+-[2025-03-09 20:29:45]question-gen |  self.gen.throw(typ, value, traceback)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+-[2025-03-09 20:29:45]question-gen |  raise to_exc(exc) from exc
+-[2025-03-09 20:29:45]question-gen |  httpcore.LocalProtocolError: Illegal header value b'Bearer '
+-[2025-03-09 20:29:45]question-gen | 
+-[2025-03-09 20:29:45]question-gen |  The above exception was the direct cause of the following exception:
+-[2025-03-09 20:29:45]question-gen | 
+-[2025-03-09 20:29:45]question-gen |  Traceback (most recent call last):
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1003, in _request
+-[2025-03-09 20:29:45]question-gen |  response = self._client.send(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 914, in send
+-[2025-03-09 20:29:45]question-gen |  response = self._send_handling_auth(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+-[2025-03-09 20:29:45]question-gen |  response = self._send_handling_redirects(
+-[2025-03-09 20:29:43]cache |  INFO: Started server process [1]
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+-[2025-03-09 20:29:45]question-gen |  response = self._send_single_request(request)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1014, in _send_single_request
+-[2025-03-09 20:29:45]question-gen |  response = transport.handle_request(request)
+-[2025-03-09 20:29:43]cache |  INFO: Waiting for application startup.
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_transports/default.py", line 249, in handle_request
+-[2025-03-09 20:29:45]question-gen |  with map_httpcore_exceptions():
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/contextlib.py", line 153, in __exit__
+-[2025-03-09 20:29:45]question-gen |  self.gen.throw(typ, value, traceback)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+-[2025-03-09 20:29:45]question-gen |  raise mapped_exc(message) from exc
+-[2025-03-09 20:29:43]cache |  INFO: Starting up
+-[2025-03-09 20:29:45]question-gen |  httpx.LocalProtocolError: Illegal header value b'Bearer '
+-[2025-03-09 20:29:43]cache |  INFO: Notifying QGen 2025-03-09 20:29:43.309352
+-[2025-03-09 20:29:45]question-gen | 
+-[2025-03-09 20:29:43]cache |  INFO: Sending request to QGen for 8 articles
+-[2025-03-09 20:29:45]cache |  ERROR: Error notifying QGen: Server error '500 Internal Server Error' for url 'http://question-gen:8000/questions'
+-[2025-03-09 20:29:45]cache |  For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+-[2025-03-09 20:29:45]cache |  Traceback (most recent call last):
+-[2025-03-09 20:29:45]question-gen |  The above exception was the direct cause of the following exception:
+-[2025-03-09 20:29:45]question-gen | 
+-[2025-03-09 20:29:45]cache |  File "/app/main.py", line 74, in generate_questions
+-[2025-03-09 20:29:45]question-gen |  Traceback (most recent call last):
+-[2025-03-09 20:29:45]cache |  response.raise_for_status()
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+-[2025-03-09 20:29:45]cache |  File "/usr/local/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+-[2025-03-09 20:29:45]cache |  raise HTTPStatusError(message, request=request, response=self)
+-[2025-03-09 20:29:45]cache |  httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'http://question-gen:8000/questions'
+-[2025-03-09 20:29:45]question-gen |  result = await app( # type: ignore[func-returns-value]
+-[2025-03-09 20:29:45]cache |  For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+-[2025-03-09 20:29:45]question-gen |  return await self.app(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+-[2025-03-09 20:29:45]question-gen |  await super().__call__(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+-[2025-03-09 20:29:45]question-gen |  await self.middleware_stack(scope, receive, send)
+-[2025-03-09 20:29:45]cache |  INFO: Initializing Redis connection
+-[2025-03-09 20:29:45]cache |  INFO: Redis connection established
+-[2025-03-09 20:29:45]cache |  INFO: Application startup complete.
+-[2025-03-09 20:29:45]cache |  INFO: Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+-[2025-03-09 20:29:52]cache |  INFO: Request started - ID: - Method: GET - Path: /health
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+-[2025-03-09 20:29:45]question-gen |  raise exc
+-[2025-03-09 20:29:52]cache |  INFO: Request completed - ID: - Method: GET - Path: /health - Status: 200 - Time: 0.00s
+-[2025-03-09 20:29:52]cache |  INFO: 127.0.0.1:45788 - "GET /health HTTP/1.1" 200 OK
+-[2025-03-09 20:29:54]cache |  INFO: Shutting down
+-[2025-03-09 20:29:54]cache |  INFO: Waiting for application shutdown.
+-[2025-03-09 20:29:54]cache |  INFO: Shutting down
+-[2025-03-09 20:29:54]cache |  INFO: Application shutdown complete.
+-[2025-03-09 20:29:54]cache |  INFO: Finished server process [1]
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+-[2025-03-09 20:29:45]question-gen |  await self.app(scope, receive, _send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/cors.py", line 85, in __call__
+-[2025-03-09 20:29:45]question-gen |  await self.app(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+-[2025-03-09 20:29:45]question-gen |  await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+-[2025-03-09 20:29:45]question-gen |  raise exc
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+-[2025-03-09 20:29:45]question-gen |  await app(scope, receive, sender)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+-[2025-03-09 20:29:45]question-gen |  await self.middleware_stack(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+-[2025-03-09 20:29:45]question-gen |  await route.handle(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+-[2025-03-09 20:29:45]question-gen |  await self.app(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+-[2025-03-09 20:29:45]question-gen |  await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+-[2025-03-09 20:29:45]question-gen |  raise exc
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+-[2025-03-09 20:29:45]question-gen |  await app(scope, receive, sender)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+-[2025-03-09 20:29:45]question-gen |  response = await f(request)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+-[2025-03-09 20:29:45]question-gen |  raw_response = await run_endpoint_function(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+-[2025-03-09 20:29:45]question-gen |  return await run_in_threadpool(dependant.call, **values)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+-[2025-03-09 20:29:45]question-gen |  return await anyio.to_thread.run_sync(func)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/anyio/to_thread.py", line 56, in run_sync
+-[2025-03-09 20:29:45]question-gen |  return await get_async_backend().run_sync_in_worker_thread(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2461, in run_sync_in_worker_thread
+-[2025-03-09 20:29:45]question-gen |  return await future
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 962, in run
+-[2025-03-09 20:29:45]question-gen |  result = context.run(func, *args)
+-[2025-03-09 20:29:45]question-gen |  File "/app/main.py", line 68, in read_questions
+-[2025-03-09 20:29:45]question-gen |  completion = llm.chat.completions.create(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+-[2025-03-09 20:29:45]question-gen |  return func(*args, **kwargs)
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 879, in create
+-[2025-03-09 20:29:45]question-gen |  return self._post(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1290, in post
+-[2025-03-09 20:29:45]question-gen |  return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 967, in request
+-[2025-03-09 20:29:45]question-gen |  return self._request(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1027, in _request
+-[2025-03-09 20:29:45]question-gen |  return self._retry_request(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1105, in _retry_request
+-[2025-03-09 20:29:45]question-gen |  return self._request(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1027, in _request
+-[2025-03-09 20:29:45]question-gen |  return self._retry_request(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1105, in _retry_request
+-[2025-03-09 20:29:45]question-gen |  return self._request(
+-[2025-03-09 20:29:45]question-gen |  File "/usr/local/lib/python3.10/site-packages/openai/_base_client.py", line 1037, in _request
+-[2025-03-09 20:29:45]question-gen |  raise APIConnectionError(request=request) from err
+-[2025-03-09 20:29:45]question-gen |  openai.APIConnectionError: Connection error.
+-[2025-03-09 20:29:51]question-gen |  INFO: 127.0.0.1:45784 - "GET /health HTTP/1.1" 200 OK
+-[2025-03-09 20:29:54]question-gen |  INFO: Shutting down
+-[2025-03-09 20:29:54]question-gen |  INFO: Waiting for application shutdown.
+-[2025-03-09 20:29:54]question-gen |  INFO: Application shutdown complete.
+-[2025-03-09 20:29:54]question-gen |  INFO: Finished server process [1]
+-[2025-03-06 04:56:10]redis |  1:C 06 Mar 2025 04:56:10.408 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 04:56:10]redis |  1:C 06 Mar 2025 04:56:10.408 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 04:56:10]redis |  1:C 06 Mar 2025 04:56:10.408 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.408 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.409 * Running mode=standalone, port=6379.
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * Server initialized
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * Loading RDB produced by version 7.4.2
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * RDB age 87593 seconds
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * DB loaded from disk: 0.000 seconds
+-[2025-03-06 04:56:10]redis |  1:M 06 Mar 2025 04:56:10.412 * Ready to accept connections tcp
+-[2025-03-06 04:58:54]redis |  1:signal-handler (1741237134) Received SIGTERM scheduling shutdown...
+-[2025-03-06 04:58:54]redis |  1:M 06 Mar 2025 04:58:54.513 * User requested shutdown...
+-[2025-03-06 04:58:54]redis |  1:M 06 Mar 2025 04:58:54.513 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 04:58:54]redis |  1:M 06 Mar 2025 04:58:54.515 * DB saved on disk
+-[2025-03-06 04:58:54]redis |  1:M 06 Mar 2025 04:58:54.515 # Redis is now ready to exit, bye bye...
+-[2025-03-06 05:00:24]redis |  1:C 06 Mar 2025 05:00:24.625 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 05:00:24]redis |  1:C 06 Mar 2025 05:00:24.625 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 05:00:24]redis |  1:C 06 Mar 2025 05:00:24.625 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.626 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.627 * Running mode=standalone, port=6379.
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * Server initialized
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * Loading RDB produced by version 7.4.2
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * RDB age 90 seconds
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * DB loaded from disk: 0.000 seconds
+-[2025-03-06 05:00:24]redis |  1:M 06 Mar 2025 05:00:24.628 * Ready to accept connections tcp
+-[2025-03-06 06:06:51]redis |  1:signal-handler (1741241211) Received SIGTERM scheduling shutdown...
+-[2025-03-06 06:06:51]redis |  1:M 06 Mar 2025 06:06:51.132 * User requested shutdown...
+-[2025-03-06 06:06:51]redis |  1:M 06 Mar 2025 06:06:51.132 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 06:06:51]redis |  1:M 06 Mar 2025 06:06:51.139 * DB saved on disk
+-[2025-03-06 06:06:51]redis |  1:M 06 Mar 2025 06:06:51.139 # Redis is now ready to exit, bye bye...
+-[2025-03-06 06:11:52]redis |  1:C 06 Mar 2025 06:11:52.475 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 06:11:52]redis |  1:C 06 Mar 2025 06:11:52.475 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 06:11:52]redis |  1:C 06 Mar 2025 06:11:52.475 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.476 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.477 * Running mode=standalone, port=6379.
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.477 * Server initialized
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.478 * Loading RDB produced by version 7.4.2
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.478 * RDB age 301 seconds
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.478 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.478 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.478 * DB loaded from disk: 0.001 seconds
+-[2025-03-06 06:11:52]redis |  1:M 06 Mar 2025 06:11:52.478 * Ready to accept connections tcp
+-[2025-03-06 06:11:58]redis |  1:signal-handler (1741241518) Received SIGTERM scheduling shutdown...
+-[2025-03-06 06:11:58]redis |  1:M 06 Mar 2025 06:11:58.493 * User requested shutdown...
+-[2025-03-06 06:11:58]redis |  1:M 06 Mar 2025 06:11:58.493 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 06:11:58]redis |  1:M 06 Mar 2025 06:11:58.495 * DB saved on disk
+-[2025-03-06 06:11:58]redis |  1:M 06 Mar 2025 06:11:58.495 # Redis is now ready to exit, bye bye...
+-[2025-03-06 06:12:08]redis |  1:C 06 Mar 2025 06:12:08.376 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 06:12:08]redis |  1:C 06 Mar 2025 06:12:08.376 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 06:12:08]redis |  1:C 06 Mar 2025 06:12:08.376 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.376 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * Running mode=standalone, port=6379.
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * Server initialized
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * Loading RDB produced by version 7.4.2
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * RDB age 10 seconds
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * RDB memory usage when created 0.93 Mb
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * DB loaded from disk: 0.000 seconds
+-[2025-03-06 06:12:08]redis |  1:M 06 Mar 2025 06:12:08.378 * Ready to accept connections tcp
+-[2025-03-06 06:12:43]redis |  1:signal-handler (1741241563) Received SIGTERM scheduling shutdown...
+-[2025-03-06 06:12:43]redis |  1:M 06 Mar 2025 06:12:43.368 * User requested shutdown...
+-[2025-03-06 06:12:43]redis |  1:M 06 Mar 2025 06:12:43.368 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 06:12:43]redis |  1:M 06 Mar 2025 06:12:43.370 * DB saved on disk
+-[2025-03-06 06:12:43]redis |  1:M 06 Mar 2025 06:12:43.370 # Redis is now ready to exit, bye bye...
+-[2025-03-06 06:14:21]redis |  1:C 06 Mar 2025 06:14:21.772 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 06:14:21]redis |  1:C 06 Mar 2025 06:14:21.772 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 06:14:21]redis |  1:C 06 Mar 2025 06:14:21.772 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.772 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.773 * Running mode=standalone, port=6379.
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * Server initialized
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * Loading RDB produced by version 7.4.2
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * RDB age 98 seconds
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * DB loaded from disk: 0.000 seconds
+-[2025-03-06 06:14:21]redis |  1:M 06 Mar 2025 06:14:21.774 * Ready to accept connections tcp
+-[2025-03-06 06:14:46]redis |  1:signal-handler (1741241686) Received SIGTERM scheduling shutdown...
+-[2025-03-06 06:14:46]redis |  1:M 06 Mar 2025 06:14:46.704 * User requested shutdown...
+-[2025-03-06 06:14:46]redis |  1:M 06 Mar 2025 06:14:46.704 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 06:14:46]redis |  1:M 06 Mar 2025 06:14:46.706 * DB saved on disk
+-[2025-03-06 06:14:46]redis |  1:M 06 Mar 2025 06:14:46.706 # Redis is now ready to exit, bye bye...
+-[2025-03-06 06:16:58]redis |  1:C 06 Mar 2025 06:16:58.567 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 06:16:58]redis |  1:C 06 Mar 2025 06:16:58.567 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 06:16:58]redis |  1:C 06 Mar 2025 06:16:58.567 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.567 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * Running mode=standalone, port=6379.
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * Server initialized
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * Loading RDB produced by version 7.4.2
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * RDB age 132 seconds
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * DB loaded from disk: 0.000 seconds
+-[2025-03-06 06:16:58]redis |  1:M 06 Mar 2025 06:16:58.568 * Ready to accept connections tcp
+-[2025-03-06 06:17:50]redis |  1:signal-handler (1741241870) Received SIGTERM scheduling shutdown...
+-[2025-03-06 06:17:50]redis |  1:M 06 Mar 2025 06:17:50.782 * User requested shutdown...
+-[2025-03-06 06:17:50]redis |  1:M 06 Mar 2025 06:17:50.782 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 06:17:50]redis |  1:M 06 Mar 2025 06:17:50.784 * DB saved on disk
+-[2025-03-06 06:17:50]redis |  1:M 06 Mar 2025 06:17:50.784 # Redis is now ready to exit, bye bye...
+-[2025-03-06 06:17:59]redis |  1:C 06 Mar 2025 06:17:59.075 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 06:17:59]redis |  1:C 06 Mar 2025 06:17:59.075 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 06:17:59]redis |  1:C 06 Mar 2025 06:17:59.075 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.076 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.076 * Running mode=standalone, port=6379.
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.076 * Server initialized
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.077 * Loading RDB produced by version 7.4.2
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.077 * RDB age 9 seconds
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.077 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.077 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.077 * DB loaded from disk: 0.000 seconds
+-[2025-03-06 06:17:59]redis |  1:M 06 Mar 2025 06:17:59.077 * Ready to accept connections tcp
+-[2025-03-06 06:20:06]redis |  1:signal-handler (1741242006) Received SIGTERM scheduling shutdown...
+-[2025-03-06 06:20:06]redis |  1:M 06 Mar 2025 06:20:06.773 * User requested shutdown...
+-[2025-03-06 06:20:06]redis |  1:M 06 Mar 2025 06:20:06.773 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 06:20:06]redis |  1:M 06 Mar 2025 06:20:06.777 * DB saved on disk
+-[2025-03-06 06:20:06]redis |  1:M 06 Mar 2025 06:20:06.777 # Redis is now ready to exit, bye bye...
+-[2025-03-06 08:52:35]redis |  1:C 06 Mar 2025 08:52:35.598 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-06 08:52:35]redis |  1:C 06 Mar 2025 08:52:35.598 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-06 08:52:35]redis |  1:C 06 Mar 2025 08:52:35.598 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.598 * monotonic clock: POSIX clock_gettime
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.599 * Running mode=standalone, port=6379.
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.599 * Server initialized
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.601 * Loading RDB produced by version 7.4.2
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.601 * RDB age 9149 seconds
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.601 * RDB memory usage when created 0.96 Mb
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.601 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.601 * DB loaded from disk: 0.002 seconds
+-[2025-03-06 08:52:35]redis |  1:M 06 Mar 2025 08:52:35.601 * Ready to accept connections tcp
+-[2025-03-06 08:52:52]redis |  1:signal-handler (1741251172) Received SIGTERM scheduling shutdown...
+-[2025-03-06 08:52:52]redis |  1:M 06 Mar 2025 08:52:52.092 * User requested shutdown...
+-[2025-03-06 08:52:52]redis |  1:M 06 Mar 2025 08:52:52.092 * Saving the final RDB snapshot before exiting.
+-[2025-03-06 08:52:52]redis |  1:M 06 Mar 2025 08:52:52.094 * DB saved on disk
+-[2025-03-06 08:52:52]redis |  1:M 06 Mar 2025 08:52:52.094 # Redis is now ready to exit, bye bye...
+-[2025-03-09 20:29:31]redis |  1:C 09 Mar 2025 20:29:31.895 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+-[2025-03-09 20:29:31]redis |  1:C 09 Mar 2025 20:29:31.895 * Redis version=7.4.2, bits=64, commit=00000000, modified=0, pid=1, just started
+-[2025-03-09 20:29:31]redis |  1:C 09 Mar 2025 20:29:31.895 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.895 * monotonic clock: POSIX clock_gettime
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.896 * Running mode=standalone, port=6379.
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.896 * Server initialized
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.897 * Loading RDB produced by version 7.4.2
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.897 * RDB age 300999 seconds
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.897 * RDB memory usage when created 0.96 Mb
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.897 * Done loading RDB, keys loaded: 0, keys expired: 0.
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.897 * DB loaded from disk: 0.001 seconds
+-[2025-03-09 20:29:31]redis |  1:M 09 Mar 2025 20:29:31.897 * Ready to accept connections tcp
+-[2025-03-09 20:29:54]redis |  1:signal-handler (1741552194) Received SIGTERM scheduling shutdown...
+-[2025-03-09 20:29:54]redis |  1:M 09 Mar 2025 20:29:54.425 * User requested shutdown...
+-[2025-03-09 20:29:54]redis |  1:M 09 Mar 2025 20:29:54.425 * Saving the final RDB snapshot before exiting.
+-[2025-03-09 20:29:54]redis |  1:M 09 Mar 2025 20:29:54.428 * DB saved on disk
+-[2025-03-09 20:29:54]redis |  1:M 09 Mar 2025 20:29:54.428 # Redis is now ready to exit, bye bye...
+-[2025-03-06 04:56:10]postgres-db | 
+-[2025-03-06 04:56:10]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 04:56:10]postgres-db | 
+-[2025-03-06 04:56:10]postgres-db |  2025-03-06 04:56:10.511 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 04:56:10]postgres-db |  2025-03-06 04:56:10.511 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 04:56:10]postgres-db |  2025-03-06 04:56:10.511 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 04:56:10]postgres-db |  2025-03-06 04:56:10.513 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 04:56:10]postgres-db |  2025-03-06 04:56:10.521 UTC [30] LOG: database system was shut down at 2025-03-05 04:36:17 UTC
+-[2025-03-06 04:56:10]postgres-db |  2025-03-06 04:56:10.531 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.439 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.441 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.446 UTC [1] LOG: background worker "logical replication launcher" (PID 33) exited with exit code 1
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.447 UTC [28] LOG: shutting down
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.448 UTC [28] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.456 UTC [28] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.010 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA62F0, redo lsn=0/1CA62F0
+-[2025-03-06 04:58:54]postgres-db |  2025-03-06 04:58:54.462 UTC [1] LOG: database system is shut down
+-[2025-03-06 05:00:24]postgres-db | 
+-[2025-03-06 05:00:24]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 05:00:24]postgres-db | 
+-[2025-03-06 05:00:24]postgres-db |  2025-03-06 05:00:24.856 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 05:00:24]postgres-db |  2025-03-06 05:00:24.856 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 05:00:24]postgres-db |  2025-03-06 05:00:24.856 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 05:00:24]postgres-db |  2025-03-06 05:00:24.858 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 05:00:24]postgres-db |  2025-03-06 05:00:24.871 UTC [28] LOG: database system was shut down at 2025-03-06 04:58:54 UTC
+-[2025-03-06 05:00:24]postgres-db |  2025-03-06 05:00:24.879 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 05:06:24]postgres-db |  2025-03-06 05:06:24.697 UTC [26] LOG: checkpoint starting: time
+-[2025-03-06 05:06:24]postgres-db |  2025-03-06 05:06:24.722 UTC [26] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.002 s, total=0.026 s; sync files=2, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA63F8, redo lsn=0/1CA63A0
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.103 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.105 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.113 UTC [1] LOG: background worker "logical replication launcher" (PID 31) exited with exit code 1
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.117 UTC [26] LOG: shutting down
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.118 UTC [26] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.123 UTC [26] LOG: checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.007 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1CA64A8, redo lsn=0/1CA64A8
+-[2025-03-06 06:06:51]postgres-db |  2025-03-06 06:06:51.129 UTC [1] LOG: database system is shut down
+-[2025-03-06 06:11:52]postgres-db | 
+-[2025-03-06 06:11:52]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 06:11:52]postgres-db | 
+-[2025-03-06 06:11:52]postgres-db |  2025-03-06 06:11:52.766 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 06:11:52]postgres-db |  2025-03-06 06:11:52.766 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 06:11:52]postgres-db |  2025-03-06 06:11:52.766 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 06:11:52]postgres-db |  2025-03-06 06:11:52.768 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 06:11:52]postgres-db |  2025-03-06 06:11:52.774 UTC [29] LOG: database system was shut down at 2025-03-06 06:06:51 UTC
+-[2025-03-06 06:11:52]postgres-db |  2025-03-06 06:11:52.779 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.401 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.405 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.416 UTC [1] LOG: background worker "logical replication launcher" (PID 32) exited with exit code 1
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.416 UTC [27] LOG: shutting down
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.418 UTC [27] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.426 UTC [27] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.002 s, total=0.010 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA6520, redo lsn=0/1CA6520
+-[2025-03-06 06:11:58]postgres-db |  2025-03-06 06:11:58.433 UTC [1] LOG: database system is shut down
+-[2025-03-06 06:12:08]postgres-db | 
+-[2025-03-06 06:12:08]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 06:12:08]postgres-db | 
+-[2025-03-06 06:12:08]postgres-db |  2025-03-06 06:12:08.598 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 06:12:08]postgres-db |  2025-03-06 06:12:08.598 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 06:12:08]postgres-db |  2025-03-06 06:12:08.598 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 06:12:08]postgres-db |  2025-03-06 06:12:08.601 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 06:12:08]postgres-db |  2025-03-06 06:12:08.607 UTC [29] LOG: database system was shut down at 2025-03-06 06:11:58 UTC
+-[2025-03-06 06:12:08]postgres-db |  2025-03-06 06:12:08.612 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.299 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.300 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.309 UTC [1] LOG: background worker "logical replication launcher" (PID 32) exited with exit code 1
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.311 UTC [27] LOG: shutting down
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.312 UTC [27] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.319 UTC [27] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.009 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA65D0, redo lsn=0/1CA65D0
+-[2025-03-06 06:12:43]postgres-db |  2025-03-06 06:12:43.326 UTC [1] LOG: database system is shut down
+-[2025-03-06 06:14:21]postgres-db | 
+-[2025-03-06 06:14:21]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 06:14:21]postgres-db | 
+-[2025-03-06 06:14:21]postgres-db |  2025-03-06 06:14:21.873 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 06:14:21]postgres-db |  2025-03-06 06:14:21.873 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 06:14:21]postgres-db |  2025-03-06 06:14:21.873 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 06:14:21]postgres-db |  2025-03-06 06:14:21.878 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 06:14:21]postgres-db |  2025-03-06 06:14:21.882 UTC [29] LOG: database system was shut down at 2025-03-06 06:12:43 UTC
+-[2025-03-06 06:14:21]postgres-db |  2025-03-06 06:14:21.904 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.666 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.668 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.675 UTC [1] LOG: background worker "logical replication launcher" (PID 32) exited with exit code 1
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.679 UTC [27] LOG: shutting down
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.680 UTC [27] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.687 UTC [27] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.009 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA6680, redo lsn=0/1CA6680
+-[2025-03-06 06:14:46]postgres-db |  2025-03-06 06:14:46.693 UTC [1] LOG: database system is shut down
+-[2025-03-06 06:16:58]postgres-db | 
+-[2025-03-06 06:16:58]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 06:16:58]postgres-db | 
+-[2025-03-06 06:16:58]postgres-db |  2025-03-06 06:16:58.699 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 06:16:58]postgres-db |  2025-03-06 06:16:58.699 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 06:16:58]postgres-db |  2025-03-06 06:16:58.700 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 06:16:58]postgres-db |  2025-03-06 06:16:58.717 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 06:16:58]postgres-db |  2025-03-06 06:16:58.730 UTC [29] LOG: database system was shut down at 2025-03-06 06:14:46 UTC
+-[2025-03-06 06:16:58]postgres-db |  2025-03-06 06:16:58.737 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.738 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.741 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.752 UTC [1] LOG: background worker "logical replication launcher" (PID 32) exited with exit code 1
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.755 UTC [27] LOG: shutting down
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.757 UTC [27] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.769 UTC [27] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.002 s, total=0.015 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA6730, redo lsn=0/1CA6730
+-[2025-03-06 06:17:50]postgres-db |  2025-03-06 06:17:50.777 UTC [1] LOG: database system is shut down
+-[2025-03-06 06:17:59]postgres-db | 
+-[2025-03-06 06:17:59]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 06:17:59]postgres-db | 
+-[2025-03-06 06:17:59]postgres-db |  2025-03-06 06:17:59.309 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 06:17:59]postgres-db |  2025-03-06 06:17:59.310 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 06:17:59]postgres-db |  2025-03-06 06:17:59.310 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 06:17:59]postgres-db |  2025-03-06 06:17:59.312 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 06:17:59]postgres-db |  2025-03-06 06:17:59.319 UTC [29] LOG: database system was shut down at 2025-03-06 06:17:50 UTC
+-[2025-03-06 06:17:59]postgres-db |  2025-03-06 06:17:59.330 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.768 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.770 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.773 UTC [1] LOG: background worker "logical replication launcher" (PID 32) exited with exit code 1
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.776 UTC [27] LOG: shutting down
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.778 UTC [27] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.787 UTC [27] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.002 s, total=0.011 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA67E0, redo lsn=0/1CA67E0
+-[2025-03-06 06:20:06]postgres-db |  2025-03-06 06:20:06.794 UTC [1] LOG: database system is shut down
+-[2025-03-06 08:52:35]postgres-db | 
+-[2025-03-06 08:52:35]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-06 08:52:35]postgres-db | 
+-[2025-03-06 08:52:35]postgres-db |  2025-03-06 08:52:35.720 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-06 08:52:35]postgres-db |  2025-03-06 08:52:35.720 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-06 08:52:35]postgres-db |  2025-03-06 08:52:35.720 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-06 08:52:35]postgres-db |  2025-03-06 08:52:35.721 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-06 08:52:35]postgres-db |  2025-03-06 08:52:35.727 UTC [28] LOG: database system was shut down at 2025-03-06 06:20:06 UTC
+-[2025-03-06 08:52:35]postgres-db |  2025-03-06 08:52:35.737 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.067 UTC [1] LOG: received fast shutdown request
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.070 UTC [1] LOG: aborting any active transactions
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.073 UTC [1] LOG: background worker "logical replication launcher" (PID 31) exited with exit code 1
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.076 UTC [26] LOG: shutting down
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.079 UTC [26] LOG: checkpoint starting: shutdown immediate
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.089 UTC [26] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.013 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA6890, redo lsn=0/1CA6890
+-[2025-03-06 08:52:52]postgres-db |  2025-03-06 08:52:52.095 UTC [1] LOG: database system is shut down
+-[2025-03-09 20:29:31]postgres-db | 
+-[2025-03-09 20:29:31]postgres-db |  PostgreSQL Database directory appears to contain a database; Skipping initialization
+-[2025-03-09 20:29:31]postgres-db | 
+-[2025-03-09 20:29:32]postgres-db |  2025-03-09 20:29:32.046 UTC [1] LOG: starting PostgreSQL 17.4 (Debian 17.4-1.pgdg120+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+-[2025-03-09 20:29:32]postgres-db |  2025-03-09 20:29:32.047 UTC [1] LOG: listening on IPv4 address "0.0.0.0", port 5432
+-[2025-03-09 20:29:32]postgres-db |  2025-03-09 20:29:32.047 UTC [1] LOG: listening on IPv6 address "::", port 5432
+-[2025-03-09 20:29:32]postgres-db |  2025-03-09 20:29:32.051 UTC [1] LOG: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+-[2025-03-09 20:29:32]postgres-db |  2025-03-09 20:29:32.056 UTC [28] LOG: database system was shut down at 2025-03-06 08:52:52 UTC
+-[2025-03-09 20:29:32]postgres-db |  2025-03-09 20:29:32.070 UTC [1] LOG: database system is ready to accept connections
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.388 UTC [1] LOG: received fast shutdown request
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.390 UTC [1] LOG: aborting any active transactions
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.395 UTC [1] LOG: background worker "logical replication launcher" (PID 31) exited with exit code 1
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.395 UTC [26] LOG: shutting down
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.396 UTC [26] LOG: checkpoint starting: shutdown immediate
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.405 UTC [26] LOG: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.002 s, total=0.010 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1CA6940, redo lsn=0/1CA6940
+-[2025-03-09 20:29:54]postgres-db |  2025-03-09 20:29:54.410 UTC [1] LOG: database system is shut down
+-- 
+2.37.1 (Apple Git-137.1)
+
+
+From 5227040b730a9e9fd801d3a131a086936ba76d3a Mon Sep 17 00:00:00 2001
+From: Geoffrey Xu <geoffreyxu@gmail.com>
+Date: Sun, 20 Jul 2025 13:32:10 -0700
+Subject: [PATCH 2/4] Added path to results from leaderboard
+
+---
+ frontend/src/components/Leaderboard.js | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/frontend/src/components/Leaderboard.js b/frontend/src/components/Leaderboard.js
+index 1c235f8..d9b3c63 100644
+--- a/frontend/src/components/Leaderboard.js
++++ b/frontend/src/components/Leaderboard.js
+@@ -86,12 +86,23 @@ const Leaderboard = () => {
+                                 </div>
+                             ))}
+                         </div>
++                        <div className="w-full flex flex-col items-center gap-2 px-6 mt-4">
++                        <button
++                            onClick={() => navigate("/results")}
++                            className="w-full max-w-md bg-blue-500 text-white py-3 text-lg rounded-md font-bold hover:bg-blue-600 transition"
++                        >
++                            Continue to Results
++                        </button>
+                         <button 
+                             onClick={() => navigate("/")} 
+-                            className="w-full mt-6 bg-orange-500 text-white py-4 text-xl rounded-md font-bold hover:bg-orange-600 transition"
++                            className="w-full max-w-md bg-orange-500 text-white py-3 text-lg rounded-md font-bold hover:bg-orange-600 transition"
+                         >
+                             Back to Login
+                         </button>
++                        </div>
++
++
++
+                     </div>
+                 </div>
+             </div>
+-- 
+2.37.1 (Apple Git-137.1)
+
+
+From f8b1a1559b913e1bf0e9629a285c3e07d3aec7e6 Mon Sep 17 00:00:00 2001
+From: Geoffrey Xu <geoffreyxu@gmail.com>
+Date: Sun, 20 Jul 2025 14:38:48 -0700
+Subject: [PATCH 3/4] Fixed Results page button not rendering on page load
+
+---
+ frontend/src/components/Leaderboard.js | 33 +++++++++++++++-----------
+ 1 file changed, 19 insertions(+), 14 deletions(-)
+
+diff --git a/frontend/src/components/Leaderboard.js b/frontend/src/components/Leaderboard.js
+index d9b3c63..41298ea 100644
+--- a/frontend/src/components/Leaderboard.js
++++ b/frontend/src/components/Leaderboard.js
+@@ -86,20 +86,25 @@ const Leaderboard = () => {
+                                 </div>
+                             ))}
+                         </div>
+-                        <div className="w-full flex flex-col items-center gap-2 px-6 mt-4">
+-                        <button
+-                            onClick={() => navigate("/results")}
+-                            className="w-full max-w-md bg-blue-500 text-white py-3 text-lg rounded-md font-bold hover:bg-blue-600 transition"
+-                        >
+-                            Continue to Results
+-                        </button>
+-                        <button 
+-                            onClick={() => navigate("/")} 
+-                            className="w-full max-w-md bg-orange-500 text-white py-3 text-lg rounded-md font-bold hover:bg-orange-600 transition"
+-                        >
+-                            Back to Login
+-                        </button>
+-                        </div>
++                        {loaded && (
++                            
++                            <div 
++                                key={`buttons-${animatedPlayers.length}`}
++                                className="w-full flex flex-col items-center gap-2 px-6 mt-4">
++                                <button
++                                    onClick={() => navigate("/results")}
++                                    className="w-full max-w-md bg-blue-500 text-white py-3 text-lg rounded-md font-bold hover:bg-blue-600 transition"
++                                >
++                                    Continue to Results
++                                </button>
++                                <button 
++                                    onClick={() => navigate("/")} 
++                                    className="w-full max-w-md bg-orange-500 text-white py-3 text-lg rounded-md font-bold hover:bg-orange-600 transition"
++                                >
++                                    Back to Login
++                                </button>
++                            </div>
++                        )}
+ 
+ 
+ 
+-- 
+2.37.1 (Apple Git-137.1)
+
+
+From d3d79e9a5bf0dce2ee7e098c906fb9f4a66921c0 Mon Sep 17 00:00:00 2001
+From: Geoffrey Xu <geoffreyxu@gmail.com>
+Date: Sun, 20 Jul 2025 16:18:13 -0700
+Subject: [PATCH 4/4] Added logging for backend components
+
+---
+ .gitignore               |  1 +
+ cache/main.py            | 65 +++++++++++++++++++++-------------------
+ gamemaster/gamemaster.py | 19 ++++++++----
+ gamemaster/main.py       | 54 ++++++++++++++++++---------------
+ question_gen/main.py     | 37 +++++++++++++----------
+ 5 files changed, 101 insertions(+), 75 deletions(-)
+
+diff --git a/.gitignore b/.gitignore
+index 5a41c88..c3f6baf 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -22,6 +22,7 @@ frontend/build/
+ npm-debug.log*
+ yarn-debug.log*
+ yarn-error.log*
++logs/
+ 
+ # System files
+ .DS_Store
+diff --git a/cache/main.py b/cache/main.py
+index 7349cba..ee641bc 100644
+--- a/cache/main.py
++++ b/cache/main.py
+@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager, contextmanager
+ import redis.asyncio as redis
+ from psycopg2 import pool
+ import os
++import logging
+ from models import _GameBatchReqElem, GameBatchReq, Question, GameBatchResp, DownvoteBatchReq
+ from apscheduler.schedulers.background import BackgroundScheduler
+ from apscheduler.triggers.interval import IntervalTrigger
+@@ -11,6 +12,12 @@ from apscheduler.executors.pool import ThreadPoolExecutor
+ import datetime
+ import httpx
+ 
++logger = logging.getLogger(__name__)
++logging.basicConfig(
++    level=logging.INFO,
++    format="%(asctime)s [%(levelname)s] %(name)s - %(message)s"
++)
++
+ tags_metadata = [
+     {
+         "name": "getbatch",
+@@ -84,8 +91,7 @@ def evict_questions_from_db():
+     Evict questions from the database based on usage count and downvote count.
+     """
+ 
+-    print("Checking for questions to evict")
+-
++    logging.info("Checking for questions to evict")
+     with get_db_connection() as conn:
+         cursor = conn.cursor()
+         query = """
+@@ -106,8 +112,7 @@ PROACTIVE_FETCH_COUNT = os.environ.get("PROACTIVE_FETCH_COUNT", 5)
+ QGEN_BATCH_SIZE = os.environ.get("QGEN_BATCH_SIZE", 10)
+ GENERATE_CHECK_PERIOD = os.environ.get("GENERATE_CHECK_PERIOD", 5) # in minutes
+ def generate_questions_as_needed():
+-    print("Checking counts per category")
+-
++    logger.info("Checking counts per category")
+     # Fetch category counts for questions and articles
+     question_counts = {}
+     article_counts = {}
+@@ -139,13 +144,13 @@ def generate_questions_as_needed():
+         for cat in CATEGORIES:
+             a_count = article_counts.get(cat, None)
+             if a_count is None:
+-                print(f"Category {cat} exhausted for articles")
++                logger.warning(f"Category {cat} exhausted for articles")
+                 continue
+             
+             min_threshold = max(int(MIN_THRESHOLD_FACTOR * a_count), 1)
+             q_count = question_counts.get(cat, 0)
+             if q_count < min_threshold:
+-                print(f"Category {cat} needs more questions: {q_count} < {min_threshold}")
++                logger.info(f"Category {cat} needs more questions: {q_count} < {min_threshold}")
+                 query = """
+                     SELECT title FROM wiki_articles
+                     WHERE 
+@@ -181,8 +186,8 @@ def fetch_and_store_questions(title_category_batch):
+         A list of tuples containing the article title (str) and category (str).
+         e.g. [(title1, category1), (title2, category2), ...]
+     """ 
+-    print("Fetching questions for articles")
+-    print(title_category_batch)
++    logger.info("Fetching questions for articles")
++    logger.debug(title_category_batch)
+     titles = [t[0] for t in title_category_batch]
+     categories = [t[1] for t in title_category_batch]
+     payload = {
+@@ -193,14 +198,13 @@ def fetch_and_store_questions(title_category_batch):
+     questions = []
+     with httpx.Client(timeout=httpx.Timeout(120.0, connect=10.0)) as client:
+         try:
+-            print(">> Posting to question-gen with payload:", payload)
+-
++            logger.debug(f">> Posting to question-gen with payload: {payload}")
+             response = client.post("http://question-gen:8000/questions", json=payload)
+             response.raise_for_status()
+             questions = response.json()["questions"]
+-            print("Fetched questions: ", questions)
++            logger.info(f"Fetched questions: {questions}")
+         except Exception as e:
+-            print("Error fetching questions: ", e)
++            logger.error(f"Error fetching questions: {e}")
+             return
+         
+     # Store questions in database
+@@ -246,8 +250,7 @@ async def lifespan(app):
+     It initializes the Redis client, database connection pool, and
+     starts the background scheduler.
+     """
+-    print("Starting up")
+-
++    logger.info("Starting up")
+     # Initialize Redis client (no need to manage connection pool)
+     global redis_client
+     redis_pool = redis.connection.BlockingConnectionPool(
+@@ -260,9 +263,9 @@ async def lifespan(app):
+     # Test Redis connection
+     try:
+         await redis_client.ping()
+-        print("Connected to Redis")
++        logger.info("Connected to Redis")
+     except redis.ConnectionError:
+-        print("Failed to connect to Redis")
++        logger.error("Failed to connect to Redis")
+         raise
+ 
+     # Test database connection
+@@ -270,14 +273,15 @@ async def lifespan(app):
+         with get_db_connection() as conn:
+             cursor = conn.cursor()
+             cursor.execute("SELECT 1")
+-            print("Connected to PostgreSQL")
++            logger.info("Connected to PostgreSQL")
+             cursor.close()
+     except Exception as e:
+         print("Failed to connect to PostgreSQL", e)
++        logger.critical(f"Failed to connect to PostgreSQL: {e}")
+         raise
+ 
+     # Fetch categories from databse
+-    print("Fetching categories")
++    logger.info("Fetching categories")
+     global CATEGORIES
+     with get_db_connection() as conn:
+         cursor = conn.cursor()
+@@ -285,7 +289,7 @@ async def lifespan(app):
+         CATEGORIES = cursor.fetchall()
+         CATEGORIES = [c[0] for c in CATEGORIES]
+         cursor.close()
+-    print("Categories: ", CATEGORIES)
++    logger.debug(f"Categories: {CATEGORIES}")
+ 
+     # Start background scheduler
+     scheduler.add_job(
+@@ -305,7 +309,8 @@ async def lifespan(app):
+ 
+     yield
+ 
+-    print("Shutting down")
++    # print("Shutting down")
++    logger.info("Shutting down cache")
+     db_conn_pool.closeall()
+     await redis_client.aclose()
+     scheduler.shutdown(wait=False)
+@@ -331,7 +336,7 @@ async def get_redis_batch(batch_req: GameBatchReq):
+     batch_req : GameBatchReq
+         The batch request containing user_id and batch of categories and counts.
+     """
+-    print("CHECKING CACHE")
++    logger.debug("CHECKING CACHE")
+     user_id = batch_req.user_id
+     async with redis_client.pipeline(transaction=True) as pipe:
+         for elem in batch_req.batch:
+@@ -340,14 +345,14 @@ async def get_redis_batch(batch_req: GameBatchReq):
+             pipe.lrange(cache_key, 0, count-1)
+             pipe.ltrim(cache_key, count, -1) # remove the unseen questions from cache
+         cached_results = await pipe.execute()
+-    print(f"Cached results: {cached_results}")
++    logger.debug(f"Cached results: {cached_results}")  
+ 
+     # see how many questions we need to fetch from db
+     counts = {elem.category: elem.count for elem in batch_req.batch}
+     return_qs = []
+     for i in range(0, len(cached_results), 2):
+         for q in cached_results[i]:
+-            print(q)
++            logger.debug(q)
+             q = Question.parse_raw(q)
+             return_qs.append(q)
+ 
+@@ -375,7 +380,7 @@ async def get_db_batch(batch_req: GameBatchReq, fetch_count: int = 10):
+     fetch_count : int, optional
+         The number of questions to fetch for each category, by default 10.
+     """
+-    print("CHECKING DB")
++    logger.debug("CHECKING DB")
+     user_id = batch_req.user_id
+     queries = []
+     params = []
+@@ -399,7 +404,7 @@ async def get_db_batch(batch_req: GameBatchReq, fetch_count: int = 10):
+         cursor.execute(query, params)
+         questions = cursor.fetchall()
+ 
+-        print("Fetched questions: ", questions)
++        logger.info(f"Fetched questions: {questions}")
+         questions = [Question(
+             id=q[0],
+             category=q[1],
+@@ -446,7 +451,7 @@ async def get_db_batch(batch_req: GameBatchReq, fetch_count: int = 10):
+             else:
+                 excess_qs.append(q)
+         # cache excess questions
+-        print("Caching excess questions: ", excess_qs)
++        logger.debug(f"Caching excess questions: {excess_qs}")
+         async with redis_client.pipeline(transaction=True) as pipe:
+             for q in excess_qs:
+                 cache_key = f"unseen:{user_id}:{q.category}"
+@@ -474,13 +479,13 @@ async def serve_game_batch(batch_req: GameBatchReq) -> GameBatchResp:
+     """
+ 
+     cached_qs, fwd_req = await get_redis_batch(batch_req)
+-    print("FWD REQ: ", fwd_req)
++    logger.debug(f"FWD REQ: {fwd_req}")
+     if len(fwd_req.batch) == 0:
+         return GameBatchResp(batch=cached_qs)
+ 
+     db_results = await get_db_batch(fwd_req)
+-    print("DB RESULTS: ", db_results)
+-    print("CACHED QS: ", cached_qs)
++    logger.debug(f"DB RESULTS: {db_results}")
++    logger.debug(f"CACHED QS: {cached_qs}")
+     return GameBatchResp(batch=cached_qs + (db_results or []))
+ 
+ @app.post("/downvote/", tags=["downvote"])
+@@ -496,7 +501,7 @@ async def downvote_questions(downvote_req: DownvoteBatchReq):
+         Should be part of payload for request, not query params.
+     """
+     # update database records
+-    print("Downvoting questions: ", downvote_req)
++    logger.info(f"Downvoting questions: {downvote_req}")    
+     if len(downvote_req.batch) == 0:
+         return {"status": "success"}
+ 
+diff --git a/gamemaster/gamemaster.py b/gamemaster/gamemaster.py
+index ec9f7aa..9f6f957 100644
+--- a/gamemaster/gamemaster.py
++++ b/gamemaster/gamemaster.py
+@@ -3,6 +3,7 @@ import re
+ import difflib
+ import psycopg2
+ import os
++import logging
+ 
+ CACHE_SERVICE_URL = "http://cache:8000"
+ MIN_ANSWER_SIMILARITY = 0.8
+@@ -16,6 +17,12 @@ DB_CONFIG = {
+     "port": "5432"
+ }
+ 
++logger = logging.getLogger(__name__)
++logging.basicConfig(
++    level=logging.INFO,
++    format="%(asctime)s [%(levelname)s] %(name)s - %(message)s"
++)
++
+ def get_db_connection():
+     conn = psycopg2.connect(**DB_CONFIG)
+     return conn
+@@ -98,7 +105,7 @@ class GameMaster:
+                     payload["batch"].append({"category": cat, "count": count})
+             payload["batch_size"] = len(payload["batch"])
+ 
+-        print("Payload for loading questions:", payload)
++        logger.debug(f"Payload for loading questions: {payload}")
+ 
+         async with httpx.AsyncClient() as client:
+             try:
+@@ -107,9 +114,9 @@ class GameMaster:
+                 self.questions = response.json()["batch"]
+                 self.scores = [0 for _ in range(len(self.questions))]
+                 self.hints_used = [0 for _ in range(len(self.questions))]
+-                print("Loaded questions:", self.questions)
++                logger.info(f"Loaded questions: {self.questions}")
+             except Exception as e:
+-                print("Error loading questions:", e)
++                logger.error(f"Error loading questions: {e}")
+                 self.questions = []
+ 
+     async def get_hints(self, categorySelect):
+@@ -209,13 +216,13 @@ class GameMaster:
+ 
+         async with httpx.AsyncClient() as client:
+             try:
+-                print("Sending downvoted questions:", payload)
++                logger.debug(f"Sending downvoted questions: {payload}")
+                 response = await client.post(f"{CACHE_SERVICE_URL}/downvote/", json=payload)
+                 response.raise_for_status()
+             except Exception as e:
+-                print("Error sending downvoted questions:", e)
++                logger.error(f"Error sending downvoted questions: {e}")
+         
+-        print(f"Downvoted questions sent {self.downvoted_questions}")
++        logger.info(f"Downvoted questions sent {self.downvoted_questions}")
+     
+     async def send_results(self):
+         # Writing Results to DB
+diff --git a/gamemaster/main.py b/gamemaster/main.py
+index d850b89..53ed638 100644
+--- a/gamemaster/main.py
++++ b/gamemaster/main.py
+@@ -6,6 +6,13 @@ import json
+ import psycopg2
+ import os
+ from pydantic import BaseModel
++import logging
++
++logger = logging.getLogger(__name__)
++logging.basicConfig(
++    level=logging.INFO,
++    format="%(asctime)s [%(levelname)s] %(name)s - %(message)s"
++)
+ 
+ tags_metadata = [
+     {
+@@ -70,12 +77,12 @@ class ConnectionManager:
+         if client_id not in self.active_connections:
+             await websocket.accept()
+             self.active_connections[client_id] = websocket
+-        print(f"Client {client_id} connected.")
++        logger.info(f"Client {client_id} connected.")
+ 
+     def disconnect(self, client_id: int):
+         if client_id in self.active_connections:
+             del self.active_connections[client_id]
+-            print(f"Client {client_id} disconnected.")
++            logger.info(f"Client {client_id} disconnected.")
+ 
+     async def send_message(self, client_id: int, message: dict):
+         ws = self.active_connections.get(client_id)
+@@ -138,7 +145,7 @@ async def websocket_endpoint(websocket: WebSocket, client_id: int):
+             elif msg_type == "submit_answer":
+                 user_answer = payload.get("answer", "")
+                 hintsUsed = payload.get("hintCount", 0)
+-                print(f"Received answer from client {client_id}: {user_answer} with {hintsUsed} hints used")
++                logger.info(f"Received answer from client {client_id}: {user_answer} with {hintsUsed} hints used")
+                 is_correct, score, answer, hints = await gm.check_answer(user_answer, hintsUsed)
+                 await manager.send_message(client_id, {
+                     "type": "answer_result",
+@@ -150,16 +157,16 @@ async def websocket_endpoint(websocket: WebSocket, client_id: int):
+                 # Cancel any timer
+                 hint_tasks[client_id].cancel()
+             elif msg_type == "end_game":
+-                print('GAME ENDED')
++                logger.info('GAME ENDED')
+                 await gmFactory.end_game(client_id)
+                 if hint_tasks.get(client_id):
+                     hint_tasks[client_id].cancel()
+                     hint_tasks.pop(client_id, None)
+ 
+-                print('status sent')
++                logger.debug('status sent')
+             elif msg_type == "downvote_question":
+                 q_id = gm.downvote_question()
+-                print(f"GM Downvoted question {q_id}")
++                logger.info(f"GM Downvoted question {q_id}")
+                 await manager.send_message(client_id, {
+                     "type": "game_status",
+                     "status": f"Downvoted question {q_id}"
+@@ -169,7 +176,7 @@ async def websocket_endpoint(websocket: WebSocket, client_id: int):
+     except WebSocketDisconnect:
+         manager.disconnect(client_id)
+     except Exception as e:
+-        print(f"Error in WebSocket communication with client {client_id}: {e}")
++        logger.error(f"Error in WebSocket communication with client {client_id}: {e}")
+         await websocket.close()
+ 
+ 
+@@ -193,7 +200,7 @@ async def send_hints_timed(game_master, client_id: int, categorySelect):
+                 break
+ 
+             # Wait & retry
+-            print(f"No questions available for client {client_id}. Retrying in 5s...")
++            logger.warning(f"No questions available for client {client_id}. Retrying in 5s...")
+             await asyncio.sleep(5)
+ 
+         # Immediately send hint #1
+@@ -217,9 +224,9 @@ async def send_hints_timed(game_master, client_id: int, categorySelect):
+         })
+     except asyncio.CancelledError:
+         # if the user ended the game or answered early
+-        print(f"send_hints_timed task cancelled for client {client_id}")
++        logger.info(f"send_hints_timed task cancelled for client {client_id}")
+     except Exception as e:
+-        print(f"Error sending hints to client {client_id}: {e}")
++        logger.error(f"Error sending hints to client {client_id}: {e}")
+ 
+ 
+ 
+@@ -241,28 +248,28 @@ async def login(data: LoginData, tags=["login"]):
+     dict
+         A dictionary containing the login status and message.
+     """
+-    print(f"Logging in user {data.username} with client_id {data.client_id},", flush=True) 
++    logger.info(f"Logging in user {data.username} with client_id {data.client_id},")
+     try:
+         conn = get_db_connection()
+         cursor = conn.cursor()
+         cursor.execute("SELECT username, id FROM users WHERE id = %s", (data.client_id,))
+         user = cursor.fetchone()
+-        print("User is:",user, flush=True)
++        logger.debug(f"User is: {user}")
+         if user:
+             if user[0] != data.username:
+                 cursor.execute("UPDATE users SET username = %s WHERE id = %s", (data.username, data.client_id))
+                 conn.commit()
+-                print("Username updated", flush=True)
+-            print("User found", flush=True)
++                logger.info("Username updated")
++            logger.info("User found")
+             return {"ok": True,"status": "User found, Username changed"}
+         else:
+-            print("User not found, creating new user", flush=True)
++            logger.info("User not found, creating new user")
+             cursor.execute("INSERT INTO users (username, id) VALUES (%s, %s) RETURNING id", (data.username, data.client_id))
+-            print("User created", flush=True)
++            logger.info("User created")
+             conn.commit()
+             return {"ok": True,"status": "User found, Username changed"}
+     except Exception as e:
+-        print(f"Error logging in: {str(e)}", flush=True)
++        logger.error(f"Error logging in: {str(e)}")
+         return {"ok":False,"error": "Internal server error"}, 500
+     finally:
+         if cursor:
+@@ -281,7 +288,7 @@ async def get_leaderboard(tags=["leaderboard"]):
+         A dictionary containing the leaderboard data.
+     """
+     try:
+-        print("Getting leaderboard", flush=True)
++        logger.info("Getting leaderboard")
+         conn = get_db_connection()
+         cursor = conn.cursor()
+         leaderboard = """
+@@ -293,7 +300,7 @@ async def get_leaderboard(tags=["leaderboard"]):
+         """
+         cursor.execute(leaderboard)
+         results = cursor.fetchall()
+-        print({"data": results}, flush=True)
++        logger.debug(f"Leaderboard data: {results}")
+         leaderboard_data = [
+             {
+                 "username": row[0],
+@@ -303,7 +310,7 @@ async def get_leaderboard(tags=["leaderboard"]):
+         ]
+         return leaderboard_data
+     except Exception as e:
+-        print(f"Error fetching leaderboard: {str(e)}", flush=True)
++        logger.error(f"Error fetching leaderboard: {str(e)}")
+         return {"error": "Internal server error"}, 500
+     finally:
+         if cursor:
+@@ -313,8 +320,7 @@ async def get_leaderboard(tags=["leaderboard"]):
+ 
+ @app.get('/ws/category-stats/{client_id}')
+ async def get_category_stats(client_id: str):
+-    print(f"Getting category stats for client {client_id}", flush=True)
+-
++    logger.info(f"Getting category stats for client {client_id}")
+     category_stats = {}
+     try:
+         conn = get_db_connection()
+@@ -332,7 +338,7 @@ async def get_category_stats(client_id: str):
+         """
+         cursor.execute(query, (client_id,))
+         results = cursor.fetchall()
+-        print({"data": results}, flush=True)
++        logger.debug(f"Category stats data: {results}")
+ 
+         for row in results:
+             category = row[0]
+@@ -345,7 +351,7 @@ async def get_category_stats(client_id: str):
+         return category_stats
+     
+     except Exception as e:
+-        print(f"Error fetching category stats: {str(e)}", flush=True)
++        logger.error(f"Error fetching category stats: {str(e)}")
+         raise e
+     finally:
+         if cursor:
+diff --git a/question_gen/main.py b/question_gen/main.py
+index 7820629..d0c8d8b 100644
+--- a/question_gen/main.py
++++ b/question_gen/main.py
+@@ -6,6 +6,14 @@ from contextlib import asynccontextmanager
+ from pydantic import BaseModel
+ import os
+ import time
++import logging
++
++logger = logging.getLogger(__name__)
++logging.basicConfig(
++    level=logging.INFO,
++    format="%(asctime)s [%(levelname)s] %(name)s - %(message)s"
++)
++logging.getLogger("wikipediaapi").setLevel(logging.WARNING)
+ 
+ # wiki_wiki = wikipediaapi.Wikipedia(user_agent= 'SWEats (geoffreyxu@g.ucla.edu)', language='en')
+ # llm = OpenAI()
+@@ -66,7 +74,6 @@ DUMMY_MODE = os.getenv("DUMMY_MODE", "False").lower() == "true"
+ 
+ @app.post("/questions", tags=["questions"])
+ def read_questions(articles: Articles)-> Questions:
+-    print("=== read_questions CALLED ===")
+     """
+     Given a list of article titles, generate a NAQT style trivia question for each article.
+     
+@@ -78,14 +85,14 @@ def read_questions(articles: Articles)-> Questions:
+     -------
+     questions: A list of NAQT style trivia questions.
+     """
+-
++    logger.info("=== read_questions CALLED ===")
+     questions = []
+     ok = True
+     error = ""
+-    print("reading questions")
++    logger.debug("reading questions")
+     # FOR TESTING PURPOSES WITHOUT USING OPENAI OR WIKIPEDIA
+     if DUMMY_MODE:
+-        print("Testing in DUMMY MODE")
++        logger.info("Testing in DUMMY MODE")
+         for title in articles.article_names:
+             question = Question(prompt1="prompt1", prompt2="prompt2", prompt3="prompt3", answer=title)
+             questions.append(question)
+@@ -94,10 +101,11 @@ def read_questions(articles: Articles)-> Questions:
+         return Questions(questions=questions, ok=ok, error=error)
+     
+     for article_name in articles.article_names:
+-        print(f"Generating question for article {article_name}")
++        logger.info(f"Generating question for article {article_name}")
+         page = wiki_wiki.page(article_name)
+         if not page.exists():
+-            error = f"Article {article_name} does not exist."
++            error = f"Article '{article_name}' does not exist."
++            logger.warning(error)
+             ok = False
+             break
+         
+@@ -112,12 +120,12 @@ def read_questions(articles: Articles)-> Questions:
+ 
+         if os.environ['OPENAI_USER_AGENT'] == 'DUMMY':
+             question = Question(prompt1="1. Clue 1", prompt2="2. Clue 2", prompt3="3. Clue 3", answer="ANSWER: Answer")
+-            print(f"Dummy question for article {article_name}", flush=True)
++            logger.debug(f"Dummy question for article {article_name}")
+             questions.append(question)
+             continue
+ 
+         while True:
+-            print("Hitting LLM")
++            logger.debug("Hitting LLM")
+             try: 
+                 completion = llm.chat.completions.create(
+                     model="gpt-3.5-turbo",
+@@ -130,11 +138,9 @@ def read_questions(articles: Articles)-> Questions:
+                         }
+                     ]
+                 )
+-                # print(completion.choices[0].message, flush=True)
+-                print(completion.choices[0].message.content, flush=True)
+                 content = completion.choices[0].message.content
+-                print("=== LLM Raw Output ===", flush=True)
+-                print(content, flush=True)
++
++                logger.debug("Raw LLM output for {article_name}:\n{content}")
+ 
+                 prompt1 = content.split("1.")[1].split("\n2.")[0].strip()
+                 prompt2 = content.split("\n2.")[1].split("\n3.")[0].strip()
+@@ -146,18 +152,19 @@ def read_questions(articles: Articles)-> Questions:
+                     questions.append(question)
+                     break
+                 else:
+-                    print(f"Invalid completion for article {article_name}. Trying again.", flush=True)
++                    logger.warning(f"Invalid completion for article {article_name}. Trying again.")
+             
+             except RateLimitError as e:
+                 if e.type == 'insufficient_quota':
+                     error = "Out of money"
++                    logger.critical(error)
+                     ok = False
+                     break
+                 else:
+-                    print("Rate limit error. Trying again.", flush=True)
++                    logger.warning("Rate limit error. Trying again.")
+ 
+             except Exception as e:
+-                print("❌ Exception from LLM or missing fields:", e)
++                logger.error(f"Exception from LLM or missing fields: {e}")
+                 break
+ 
+ 
+-- 
+2.37.1 (Apple Git-137.1)
+
